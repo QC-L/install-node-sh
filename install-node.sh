@@ -1,0 +1,43 @@
+# !/install-node.sh
+# des: 通过 shell 一键安装 node.js
+# author: QC-L
+# date: 2017/11/20
+
+if [[ `uname` != 'Darwin' ]]; then
+  exit 0
+fi
+
+# .nvm 的路径
+nvmPath="$HOME/.nvm"
+# .bash_profile 的路径
+bash_profilePath="$HOME/.bash_profile"
+# 定义要安装的 node 版本
+node_version="8"
+# nvm 版本
+nvm_version="v0.33.6"
+
+# 判断 .bash_profile 是否存在
+if [[ ! -f "$bash_profilePath" ]]; then
+  # 不存在创建 .bash_profile
+  touch "$bash_profilePath"
+fi
+
+# 判断 .nvm 是否存在
+if [[ -d "$nvmPath" ]]; then
+  # 存在就移除(有可能安装失败)
+  rm -rf "$nvmPath"
+fi
+# 官方下载 nvm
+curl -o- "https://raw.githubusercontent.com/creationix/nvm/${nvm_version}/install.sh" | bash
+# .bash_profile 生效
+source "$bash_profilePath"
+
+# 安装 node 版本
+nvm install "$node_version"
+nvm use "$node_version"
+nvm alias default "$node_version"
+
+# 安装 nrm
+npm install -g nrm --registry=https://registry.npm.taobao.org
+# 默认使用 taobao 镜像
+nrm use taobao
