@@ -3,7 +3,7 @@
 # author: QC-L
 # date: 2017/11/20
 
-if [[ `uname` != 'Darwin' ]]; then
+if [[ `uname` != 'Darwin' && `uname` != 'Linux' ]]; then
   exit 0
 fi
 
