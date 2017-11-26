@@ -17,7 +17,7 @@ Run `./install-node.sh` to install Node.js.
   ./install-node.sh
 ```
 ## Remarks
-Currently only supports macOS. There is no support for Windows.
+Currently supports macOS andd Linux. There is no support for Windows.
 
 
 [1]: https://github.com/QC-L/node-sh/releases/tag/v0.1.0
