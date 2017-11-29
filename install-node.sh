@@ -3,8 +3,19 @@
 # author: QC-L
 # date: 2017/11/20
 
+# 判断如果不是 macOS 并且不是 Linux，则退出
 if [[ `uname` != 'Darwin' && `uname` != 'Linux' ]]; then
   exit 0
+fi
+
+# 如果是 Linux ，且没安装 git
+if [[ `uname` == 'Linux'  ]]; then
+  if command -v git >/dev/null 2>&1; then
+    echo 'exists git'
+  # 则安装
+  else
+    yum install git
+  fi
 fi
 
 # .nvm 的路径
