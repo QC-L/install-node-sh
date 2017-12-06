@@ -22,16 +22,26 @@ fi
 nvmPath="$HOME/.nvm"
 # .bash_profile 的路径
 bash_profilePath="$HOME/.bash_profile"
+# .bashrc 的路径
+bashrcPath="$HOME/.bashrc"
 # 定义要安装的 node 版本
 node_version="8"
 # nvm 版本
 nvm_version="v0.33.6"
+
+# 判断 .bashrc 是否存在
+if [[ ! -f "$bashrcPath" ]]; then
+  # 不存在创建 .bashrc
+  touch "$bashrcPath"
+fi
 
 # 判断 .bash_profile 是否存在
 if [[ ! -f "$bash_profilePath" ]]; then
   # 不存在创建 .bash_profile
   touch "$bash_profilePath"
 fi
+
+echo "source ~/.bashrc" >> ~/.bash_profile
 
 # 判断 .nvm 是否存在
 if [[ -d "$nvmPath" ]]; then
