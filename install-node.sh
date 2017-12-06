@@ -51,6 +51,7 @@ fi
 # 官方下载 nvm
 curl -o- "https://raw.githubusercontent.com/creationix/nvm/${nvm_version}/install.sh" | bash
 # .bash_profile 生效
+source "$bashrcPath"
 source "$bash_profilePath"
 
 # 安装 node 版本
