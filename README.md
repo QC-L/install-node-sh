@@ -10,6 +10,12 @@ Run `./install-node.sh` to install Node.js.
 ## Quick installation
 
 ```
+curl -o- https://raw.githubusercontent.com/QC-L/install-node-sh/master/install-node.sh | bash
+```
+
+or
+
+```
   # clone
   git clone https://github.com/QC-L/install-node-sh
   # install
