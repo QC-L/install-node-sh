@@ -25,9 +25,9 @@ bash_profilePath="$HOME/.bash_profile"
 # .bashrc 的路径
 # bashrcPath="$HOME/.bashrc"
 # 定义要安装的 node 版本
-node_version="8"
+node_version="10"
 # nvm 版本
-nvm_version="v0.33.6"
+nvm_version="v0.34.0"
 
 # # 判断 .bashrc 是否存在
 # if [[ ! -f "$bashrcPath" ]]; then
